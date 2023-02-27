@@ -1,0 +1,8 @@
+Django==2.2
+Pillow>=9.1.1
+PyMySQL==0.9.3
+requests==2.27.1
+psycopg2-binary==2.8.5
+pycrypto==2.6.1
+pycryptodomex==3.9.8
+pycryptodome==3.9.9
