@@ -10,7 +10,7 @@ RUN apk update \
     && apk add git vim neovim htop
 
 # Repository
-RUN git clone https://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@github.com/Raloy-Lubricantes-S-A-de-C-V/DEV024.git
+RUN git clone https://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@github.com/Raloy-Lubricantes-S-A-de-C-V/DEV024.git
 
 RUN python3 -m venv venv
 RUN chmod -R 777 venv
