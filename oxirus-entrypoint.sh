@@ -11,7 +11,19 @@ python3 suppliers/manage.py migrate --settings=suppliers.local
 
 echo ".::: GENERAL MIGRATIONS :::."
 
-python3 suppliers/manage.py runserver 0.0.0.0:8008 --settings=suppliers.local
+python3 suppliers/manage.py makemigrations user --settings=suppliers.local
+
+python3 suppliers/manage.py migrate user --settings=suppliers.local
+
+python3 suppliers/manage.py makemigrations invoice --settings=suppliers.local
+
+python3 suppliers/manage.py migrate invoice --settings=suppliers.local
+
+python3 suppliers/manage.py makemigrations supplier --settings=suppliers.local
+
+python3 suppliers/manage.py migrate supplier --settings=suppliers.local
+
+python3 suppliers/manage.py runserver 0.0.0.0:8000 --settings=suppliers.local
 
 echo ">>>"
 echo "--------------------------COMPLETE--------------------------------"
