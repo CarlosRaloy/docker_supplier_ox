@@ -16,7 +16,23 @@ Run the imege
 docker build -t oxirus:v01 .
 ```
 
-Tun the container
+Run the container
 ```
-mkdir static && docker run -it -d -p 8008:8008 -v $PWD/cfdscomplementos:/opt/cfdscomplementos -v $PWD/cfdsprovee:/opt/cfdsprovee -v $PWD/static:/app/suppliers/static --name portal_oxirus oxirus:v01 && docker cp portal_oxirus:/tmp/backup/. ./static
+docker run -it -d -p 8000:8000 -v $(pwd)/cfdscomplementos:/opt/cfdscomplementos -v $(pwd)/cfdsprovee:/opt/cfdsprovee --name portal_oxirus oxirus:v01
+```
+
+View the logs
+```
+docker logs portal_oxirus -f
+```
+
+Enter the container
+```
+docker exec -it portal_oxirus sh
+```
+
+
+Stop and delete the container
+```
+docker stop portal_oxirus && docker rm portal_oxirus && docker rmi oxirus:v01
 ```
